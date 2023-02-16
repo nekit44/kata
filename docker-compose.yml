@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  php-cli:
+    build:
+      context: ./
+      dockerfile: docker/php-cli.docker
+    volumes:
+      - ./:/var/www
+    extra_hosts:
+      - "docker.for.win.localhost:172.17.0.1"
+    tty: true
+
