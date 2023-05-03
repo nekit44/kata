@@ -17,6 +17,7 @@ class PalindromeNumberTest extends TestCase
         $palindromeNumber = new PalindromeNumber();
 
         self::assertSame(true, $palindromeNumber(121));
+        self::assertSame(true, $palindromeNumber(987789));
         self::assertSame(false, $palindromeNumber(-121));
         self::assertSame(false, $palindromeNumber(10));
     }
