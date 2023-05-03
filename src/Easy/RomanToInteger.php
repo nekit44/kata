@@ -23,7 +23,7 @@ class RomanToInteger
     {
         $result = 0;
         foreach ($roman = str_split($s) as $key => $item) {
-            if (isset($roman[$key + 1]) && self::ROMAN[$roman[$key]] < (self::ROMAN[$roman[$key + 1] ?? 0] )) {
+            if (isset($roman[$key + 1]) && self::ROMAN[$roman[$key]] < (self::ROMAN[$roman[$key + 1]] )) {
                 $result -= self::ROMAN[$roman[$key]];
             } else {
                 $result += self::ROMAN[$roman[$key]];
