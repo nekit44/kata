@@ -12,6 +12,6 @@ class PlusOne
      */
     public function __invoke($digits): array
     {
-        return str_split((string)bcadd(implode($digits),1));
+        return str_split((string)bcadd(implode($digits),'1'));
     }
 }
