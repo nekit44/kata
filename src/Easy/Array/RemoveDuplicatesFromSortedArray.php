@@ -3,14 +3,24 @@ declare(strict_types=1);
 
 namespace App\Easy\Array;
 
+use App\Common\ListNode;
+
 class RemoveDuplicatesFromSortedArray
 {
     /**
-     * @param Integer[] $nums
-     * @return array
+     * @param ListNode $head
+     * @return ListNode
      */
-    public function __invoke($nums): array
+    public function __invoke(ListNode $head): ListNode
     {
-        return array_values(array_unique($nums));
+        $current = $head;
+        while ($current !== null && $current->next !== null) {
+            if ($current->val === $current->next->val) {
+                $current->next = $current->next->next;
+            } else {
+                $current = $current->next;
+            }
+        }
+        return $head;
     }
 }
